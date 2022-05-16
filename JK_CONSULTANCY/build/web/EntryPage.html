@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+
+        <script src="https://kit.fontawesome.com/67c66657c7.js"></script>
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap');
+            *{
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+                /*                font-family: 'Poppins',sans-serif;*/
+                font-family: 'Playfair Display', serif;
+            }
+            nav{
+                display: flex;
+                width: 100%;
+                background: #0a5071;
+                position: relative;
+                justify-content: space-between;
+                text-align: center;
+                padding: 15px 30px;
+            }
+            nav .icon{
+                font-size: 35px;
+                font-weight: 800;
+                color: #fff;
+                cursor: pointer;
+
+
+            }
+            .icon img {
+                width: 150px;
+                padding: 3px;
+                /* filter: invert(100%); */
+            }
+
+            .icon div {
+                text-align: center;
+                width: 0px;
+                line-height: 19px;
+            }
+            nav ol{
+                display: flex;
+                list-style: none;
+                margin: auto 0;
+            }
+            nav ol li{
+                margin: 0 2px;
+            }
+            nav ol li a{
+                color: #fff;
+                font-size: 20px;
+                text-decoration: none;
+                text-transform: capitalize;
+                letter-spacing: 1px;
+                padding: 5px 10px;
+            }
+            nav ol li:hover a{
+                background: #fff;
+                color: #0a5071;
+            }
+            nav .search_box{
+                display: flex;
+                margin: auto 0;
+                height: 35px;
+                line-height: 35px;
+            }
+            nav .search_box input{
+                border: none;
+                outline: none;
+                background: #fff;
+                height: 100%;
+                padding: 0 10px;
+                font-size: 20px;
+                width: 350px;
+            }
+            nav .search_box span{
+                color: #0a5071;
+                font-size: 20px;
+                background: #fff;
+                height: 100%;
+                padding: 8px;
+                position: relative;
+                cursor: pointer;
+                z-index: 1;
+            }
+            nav .search_box span:hover{
+                color: #fff;
+            }
+            nav .search_box span::after{
+                height: 100%;
+                width: 0%;
+                content: '';
+                background: #ff003c;
+                position: absolute;
+                top: 0;
+                right: 0;
+                z-index: -1;
+                transition: 0.3s;
+            }
+            nav .search_box span:hover::after{
+                width: 100%;
+            }
+            nav .bar{
+                position: relative;
+                margin: auto;
+                display: none;
+            }
+            nav .bar span{
+                position: absolute;
+                color: #fff;
+                font-size: 35px;
+            }
+            input[type="checkbox"]{
+                -webkit-appearance: none;
+                display: none;
+            }
+            @media screen and (max-width: 1200px){
+                nav{
+                    display: block;
+                    padding: 0;
+                }
+                nav .icon{
+                    position: absolute;
+                    top: 20px;
+                    left: 20px;
+                    /* border: 2px solid rgb(161, 18, 25); */
+                    display: inline-block;
+
+                    padding: 15px 30px;
+                }
+                nav .search_box{
+                    width: 100%;
+                    display: inline-flex;
+                    justify-content: center;
+                    margin-bottom: 15px;
+                }
+                nav .search_box input{
+                    width: 90%;
+                }
+                nav ol{
+                    display: flex;
+                    flex-direction: column;
+                    background: #fff;
+                    height: 0;
+                    visibility: hidden;
+                    transition: 0.3s;
+                }
+                nav ol li{
+                    text-align: center;
+                    transition: 0.3s 0.1s all;
+                    opacity: 0;
+                }
+                nav ol li a{
+                    color: #000;
+                    font-size: 28px;
+                    padding: 25px;
+                    display: block;
+                }
+                nav ol li:nth-child(1){
+                    transform: translateX(-150px);
+                }
+                nav ol li:nth-child(2){
+                    transform: translateX(-200px);
+                }
+                nav ol li:nth-child(3){
+                    transform: translateX(-250px);
+                }
+                nav ol li:nth-child(4){
+                    transform: translateX(-300px);
+                }
+                nav ol li:nth-child(5){
+                    transform: translateX(-350px);
+                }
+                nav .bar{
+                    display: block;
+                    position: absolute;
+                    top: 20px;
+                    right: 80px;
+                    cursor: pointer;
+                }
+                nav .bar #times{
+                    display: none;
+                }
+                #check:checked ~ nav .bar #times{
+                    display: block;
+                }
+                #check:checked ~ nav .bar #bars{
+                    display: none;
+                }
+                #check:checked ~ nav ol{
+                    visibility: visible;
+                    height: 465px;
+                }
+                #check:checked ~ nav ol li:nth-child(1),
+                #check:checked ~ nav ol li:nth-child(2),
+                #check:checked ~ nav ol li:nth-child(3),
+                #check:checked ~ nav ol li:nth-child(4),
+                #check:checked ~ nav ol li:nth-child(5){
+                    transform: translateX(0);
+                    opacity: 1;
+                }
+            } 
+
+            section{
+                background: url(pexels-pixabay-459653.jpg);                            
+                height: 100%;
+                width: 100%;
+                position: absolute;
+                background-position: center;
+                background-size: cover;
+                top: 3px;
+                z-index: -1;
+                filter: brightness(310%);
+            }
+            .btn {
+
+                display: inline-block;
+                font-size: 17px;
+                font-weight: 100px;
+                color: white;
+                text-transform: uppercase;
+                /* background: linear-gradient(57deg, #00C6A7, #1E4D92); */
+                background: linear-gradient(-135deg, #c850c0, #4158d0);
+                border-radius: 4px 4px 4px 4px;
+                padding: 14px 19px;
+                margin-top: 3px;
+            }
+
+            .btn:hover {
+                background-color: deeppink;
+            }
+            section {
+                display: flex;
+            }
+
+            .leftside {
+                width: 45%;
+                height: auto;
+                overflow: hidden;
+                margin-top: 20px;
+            }
+
+            .leftside img {
+                width: 738px;
+                height: 617px;
+                padding-left: 9px;
+                margin: -48px;
+                background-size: cover;
+                margin-top: 89px;
+                padding-left: -3px;
+                border-radius: 380px;
+
+            }
+
+            .rightside {
+                width: 55%;
+                height: auto;
+                color: white;
+                text-align: right;
+                margin-top: 71px;
+                padding: 36px;
+
+
+                overflow: hidden;
+                margin-top:164px;
+                border-radius: 80px;
+            }
+
+            .rightside h2 {
+                font-family: 'Baloo Bhai 2', cursive;
+                font-style: italic;
+                text-align: center;
+                color: #ffffff;
+                font-size: 50px;
+                font-weight: 600;
+                text-transform: uppercase;
+            }
+
+            .rightside p {
+                font-size: 1.1rem;
+                padding: 13px 0;
+                margin-top: 13px;
+                text-align: center;
+            }
+
+            .rightside button {
+                font-size: 17px;
+                font-weight:700px;
+                color: white;
+                text-transform: uppercase;
+                background: linear-gradient(57deg, #00C6A7, #1E4D92);
+                border-radius: 4px 4px 4px 4px;
+                padding: 20px 35px;
+                margin-top: 60px;
+            }
+
+            .rightside button:hover {
+                background: linear-gradient(57deg, #1E4D92, #00C6A7);
+            }
+            #intro {
+                display: table;
+                width: 100%;
+                height: 100vh;
+/*                background: #000;*/
+            }
+
+            #intro .carousel-item {
+                width: 100%;
+                height: 100vh;
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+            }
+
+            #intro .carousel-item::before {
+                content: '';
+                background-color: rgba(0, 0, 0, 0.7);
+                position: absolute;
+                height: 100%;
+                width: 100%;
+                top: 0;
+                right: 0;
+                left: 0;
+                bottom: 0;
+            }
+
+            #intro .carousel-container {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                position: absolute;
+                bottom: 0;
+                top: 0;
+                left: 0;
+                right: 0;
+            }
+
+            #intro .carousel-content {
+                text-align: center;
+            }
+
+            #intro h2 {
+                color: #fff;
+                margin-bottom: 30px;
+                font-size: 48px;
+                font-weight: 700;
+            }
+
+            @media (max-width: 768px) {
+                #intro h2 {
+                    font-size: 28px;
+                }
+            }
+
+            #intro p {
+                width: 80%;
+                margin: 0 auto 30px auto;
+                color: #fff;
+            }
+
+            @media (min-width: 1024px) {
+                #intro p {
+                    width: 60%;
+                }
+            }
+
+            #intro .carousel-fade .carousel-inner .carousel-item {
+                -webkit-transition-property: opacity;
+                transition-property: opacity;
+            }
+
+            #intro .carousel-fade .carousel-inner .carousel-item,
+            #intro .carousel-fade .carousel-inner .active.carousel-item-left,
+            #intro .carousel-fade .carousel-inner .active.carousel-item-right {
+                opacity: 0;
+            }
+
+            #intro .carousel-fade .carousel-inner .active,
+            #intro .carousel-fade .carousel-inner .carousel-item-next.carousel-item-left,
+            #intro .carousel-fade .carousel-inner .carousel-item-prev.carousel-item-right {
+                opacity: 1;
+                transition: 0.5s;
+            }
+
+            #intro .carousel-fade .carousel-inner .carousel-item-next,
+            #intro .carousel-fade .carousel-inner .carousel-item-prev,
+            #intro .carousel-fade .carousel-inner .active.carousel-item-left,
+            #intro .carousel-fade .carousel-inner .active.carousel-item-right {
+                left: 0;
+                -webkit-transform: translate3d(0, 0, 0);
+                transform: translate3d(0, 0, 0);
+            }
+
+            #intro .carousel-control-prev, #intro .carousel-control-next {
+                width: 10%;
+            }
+
+            @media (min-width: 1024px) {
+                #intro .carousel-control-prev, #intro .carousel-control-next {
+                    width: 5%;
+                }
+            }
+
+            #intro .carousel-control-next-icon, #intro .carousel-control-prev-icon {
+/*                background: none;*/
+                font-size: 32px;
+                line-height: 1;
+            }
+
+            #intro .carousel-indicators li {
+                cursor: pointer;
+            }
+
+            #intro .btn-get-started {
+                font-family: "Montserrat", sans-serif;
+                font-weight: 500;
+                font-size: 16px;
+                letter-spacing: 1px;
+                display: inline-block;
+                padding: 8px 32px;
+                border-radius: 50px;
+                transition: 0.5s;
+                margin: 10px;
+                color: #fff;
+                background: #18d26e;
+            }
+
+            #intro .btn-get-started:hover {
+                background: #fff;
+                color: #18d26e;
+            }
+
+        </style>
+    </head>
+    <body>
+
+        <nav>
+            <div class="icon">
+               <img src="img/logo.png " alt="">
+
+
+            </div>
+            <div class="search_box">
+                <input type="search" placeholder="Search here">
+                <span class="fa fa-search"></span>
+            </div>
+            <ol>
+                <li><a href="EntryPage.html" class="active"> Home</a></li>
+                <li><a href="Show_Company_Details.jsp">View Job</a> </li>
+                <li><a href="internship.jsp">Internship</a> </li>
+                <li><a href="EntryService.jsp">Services</a> </li>
+
+                <li><a href="EntryAbout.jsp"> About us</a></li>
+            </ol>
+            <div class="button">
+                <a href="JK_CONSULTANCY.html">
+                    <button class="btn">LogOut</button>
+                </a>
+            </div>
+            <label for="check" class="bar">
+                <span class="fa fa-bars" id="bars"></span>
+                <span class="fa fa-times" id="times"></span>
+            </label>
+        </nav>
+
+
+
+        <section id="intro">
+            <div class="intro-container">
+                <div id="introCarousel" class="carousel  slide carousel-fade" data-ride="carousel">
+
+                    <div class="carousel-inner">
+
+                        <div class="carousel-item active">
+<!--                            <div class="carousel-background"><img src="pexels-pixabay-459653.jpg" alt=""></div>-->
+                            <div class="carousel-container">
+                                <div class="carousel-content">
+                                    <h2>Get ahead.</h2>
+                                    <h2>Get an internship!</h2>
+                                    <a href="#featured-services" class="btn-get-started scrollto">Get Started</a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+
+
+
+
+
+
+    </body>
+</html>

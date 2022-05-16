@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="pra.css">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Baloo+Bhai+2&display=swap" rel="stylesheet">
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+                /*                font-family: 'Montserrat', sans-serif;*/
+                font-family: "Poppins" , sans-serif;
+            }
+
+            .site-header {
+                width: 100%;
+                height: 95vh;
+                background: #0f8a9d;
+                /*                background: linear-gradient(57deg, #00C6A7, #1E4D92);*/
+                background: linear-gradient(135deg, #71b7e6, #9b59b6);
+                clip-path: polygon(0% 0%, 100% 0%, 100% 80%, 0% 100%);
+                font: optional;
+                float: left;
+            }
+
+            nav {
+                width: 100%;
+                height: 100px;
+                /*background-color:  red;*/
+                display: flex;
+                color: white;
+            }
+
+            .logo {
+                position: absolute;
+                top: 20px;
+                left: 20px;
+                /* border: 2px solid rgb(161, 18, 25); */
+                display: inline-block;
+            }
+
+            .logo img {
+                width: 150px;
+                padding: 3px;
+                /* filter: invert(100%); */
+            }
+
+            .logo div {
+                text-align: center;
+                width: 0px;
+                line-height: 19px;
+            }
+
+            .logo h3 {
+                display: block;
+                font-size: 7px;
+                margin-block-start: 0px;
+                margin-block-end: 0px;
+                margin-inline-start: 0px;
+                margin-inline-end: 0px;
+                font-weight: bold;
+                color: rgb(139, 0, 104);
+            }
+
+
+
+            .navigation {
+                display: block;
+                /* border-radius: 10px; */
+                /* overflow: auto; */
+                width: 800px;
+                margin: 10px auto;
+                /* border: 2px solid rgb(28, 24, 167); */
+                padding: 10px;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-around;
+                align-items: center;
+            }
+
+            .navbar1 {
+                display: inline-block;
+            }
+
+            .navbar1 li {
+                display: inline-block;
+                font-size: 22px;
+                list-style: none;
+                /* font-size: 15px; */
+                /*                font-weight: bold;*/
+                text-transform: uppercase;
+            }
+
+            .navbar1 li a {
+                color: rgb(37, 32, 34);
+                text-decoration: none;
+                padding: 12px 9px;
+            }
+
+            .navbar1 li a:hover,
+            .navbar1 li a.active {
+                text-decoration: underline;
+                color: rgb(21, 255, 0);
+                padding: 3px 13px;
+            }
+
+
+
+
+            .button {
+                position: absolute;
+                top: -20px;
+                right: 10px;
+                /* border: 2px solid rgb(0, 255, 55); */
+            }
+
+            .btn {
+
+                display: inline-block;
+                font-size: 17px;
+                font-weight: 200px;
+                color: white;
+                text-transform: uppercase;
+                background: linear-gradient(57deg, #00C6A7, #1E4D92);
+                border-radius: 4px 4px 4px 4px;
+                padding: 17px 15px;
+                margin-top: 34px;
+            }
+
+            .btn:hover {
+                background-color: deeppink;
+            }
+
+            section {
+                display: flex;
+            }
+
+            .leftside {
+                width: 45%;
+                height: auto;
+                overflow: hidden;
+                margin-top: 20px;
+            }
+
+            .leftside img {
+                width: 700px;
+                height: 500px;
+                padding-left: 3px;
+                margin: 2px;
+                background-size: cover;
+            }
+
+            .rightside {
+                width: 55%;
+                height: auto;
+                color: white;
+                text-align: right;
+                margin-top: 20px;
+                padding: 40px;
+            }
+
+            .rightside h2 {
+                font-family: 'Baloo Bhai 2', cursive;
+                font-style: italic;
+                text-align: center;
+                color: #ffffff;
+                font-size: 50px;
+                font-weight: 600;
+                text-transform: uppercase;
+            }
+
+            .rightside p {
+                font-size: 1.1rem;
+                padding: 13px 0;
+                margin-top: 13px;
+                text-align: center;
+            }
+
+            .rightside button {
+                font-size: 17px;
+                font-weight:700px;
+                color: white;
+                text-transform: uppercase;
+                background: linear-gradient(57deg, #00C6A7, #1E4D92);
+                border-radius: 4px 4px 4px 4px;
+                padding: 20px 35px;
+                margin-top: 60px;
+            }
+
+            .rightside button:hover {
+                background: linear-gradient(57deg, #1E4D92, #00C6A7);
+            }
+        </style>
+    </head>
+
+    <body>
+
+        <header class="site-header clearfix">
+            <nav>
+                <div class="logo">
+                    <img src="img/logo.png " alt="">
+                    <!-- <h3>CONSULTANCY</h3> -->
+                </div>
+
+                <div class="navigation">
+                    <ul class="navbar1">
+                        <li><a href="JK_CONSULTANCY.html"> Home</a></li>
+                        <li><a href="Companies.jsp">Companies</a> </li>
+                        <li><a href="Services.jsp">Services</a> </li>
+                        <li><a href="About.jsp"> About us</a></li>
+                        <li><a href="contact.jsp">Contact Us</a> </li>
+
+                    </ul>
+                </div>
+                <div class="button">
+                    <a href="Singup.jsp"><button class="btn">Sign Up</button></a> <a href="Registration.jsp"><button class="btn">Registration</button></a>
+                </div>
+            </nav>
+
+            <section>
+                <div class="leftside">
+                    <img src="img/pexels-andrea-piacquadio-3756681.jpg">
+                </div>
+
+                <div class="rightside">
+                    <h2>ONLINE JOB CONSULTANCY...</h2>
+                    <!-- <p> DONATION FOR SUPPORT: PhonePay = jkconsultncy123@ybl GooglePay: jkconsultancy55@oksbi Believe me, all this money will be used to make my website grow. :) </p> -->
+                    <p>Website managers are IT specialists who help organizations by managing their website. They oversee the functionality of the website, evaluate and manage website performance, facilitate hosting and server management, and develop, maintain
+                        and update website content.</p>
+
+                    <!-- <button>Welcome</button>
+                </div> -->
+                    <a href="#"> <button>Welcome</button></a>
+                </div>
+
+
+
+            </section>
+
+
+        </header>
+
+    </body>
+
+
+</html>
